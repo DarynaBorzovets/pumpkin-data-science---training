@@ -10,7 +10,7 @@ def create_df() -> pd.DataFrame:
         pd.DataFrame: Combined DataFrame containing data from all CSV files.
     """
     # Path to the folder containing the CSV files
-    data_folder = 'data/'
+    data_folder = 'data/'  # Update this to the path where your CSV files are stored
 
     # List of city CSV filenames in alphabetical order
     city_files = [
@@ -36,13 +36,11 @@ def create_df() -> pd.DataFrame:
     
     return combined_df
 
-# Call the function to create the combined DataFrame
+# Create the combined DataFrame
 combined_df = create_df()
 
-# Name for the combined file
+# Save the combined DataFrame to a new CSV file
 combined_file_name = 'combined_pumpkin_sales.csv'
-
-# Save the combined DataFrame to a new CSV file with the chosen name
 combined_df.to_csv(combined_file_name, index=False)
 
 # Display the first few rows of the combined DataFrame (optional)
